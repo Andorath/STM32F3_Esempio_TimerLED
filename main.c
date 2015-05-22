@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    ADC_Example/main.c 
-  * @author  MCD Application Team
+  * @author  Marco Giuseppe Salafia & Damiano Di Stefano
   * @version V1.1.0
   * @date    20-September-2012
   * @brief   Main program body
@@ -97,6 +97,7 @@ void TIM2_IRQHandler()
     if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
     {
         TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+        //Ho dovuto scrivere questa funzione nelle librerie di sistema
         GPIO_ToggleBits(GPIOE, GPIO_Pin_12);
     }
 }
@@ -131,11 +132,7 @@ int main(void)
             GPIO_WriteBit(GPIOE, GPIO_Pin_12, Bit_SET);
         else if (timerValue == 500)
             GPIO_WriteBit(GPIOE, GPIO_Pin_12, Bit_RESET);
-      */
-    
-    
-    
-    
+      */ 
   }
 }
 
